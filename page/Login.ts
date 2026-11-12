@@ -16,6 +16,12 @@ export class Login{
         AlertMessage: ()=> this.page.getByRole("alert"),
     }
 
+    async connexion(email:string, motDePasse:string){
+        await this.elements.Email().fill(email)
+        await this.elements.MotDePasse().fill(motDePasse)
+        return this.elements.AlertMessage()
+    }
+
     async saisirEmail(email:string){
         await this.elements.Email().fill(email)
     }
